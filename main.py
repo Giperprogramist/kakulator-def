@@ -1,37 +1,25 @@
+def add(x, y): return x + y
+def subtract(x, y): return x - y
+def multiply(x, y): return x * y
+def divide(x, y): return x / y if y != 0 else "Ошибка: деление на ноль"
+
+
 def calculator():
-    print('calculator')
-    while True:
-        a = int(input('Введите число a: '))
-        b = int(input('Введите число b: '))
-        c = input('Введите символ + - * ** / // % или "q" для выхода: ')
+    print("Выберите операцию:")
+    print("1. Сложение")
+    print("2. Вычитание")
+    print("3. Умножение")
+    print("4. Деление")
 
-        if c == 'q':
-            break
+    choice = input("Введите номер операции (1/2/3/4): ")
+    num1 = float(input("Введите первое число: "))
+    num2 = float(input("Введите второе число: "))
 
-        if c == '+':
-            print(a, '+', b, '=', a + b)
-        elif c == '-':
-            print(a, '-', b, '=', a - b)
-        elif c == '*':
-            print(a, '*', b, '=', a * b)
-        elif c == '**':
-            print(a, '**', b, '=', a ** b)
-        elif c == '/':
-            if b != 0:
-                print(a, '/', b, '=', a / b)
-            else:
-                print("Ошибка: деление на ноль!")
-        elif c == '//':
-            if b != 0:
-                print(a, '//', b, '=', a // b)
-            else:
-                print("Ошибка: деление на ноль!")
-        elif c == '%':
-            if b != 0:
-                print(a, '%', b, '=', a % b)
-            else:
-                print("Ошибка: деление на ноль!")
-        else:
-            print("Ошибка: неверный символ операции. Пожалуйста, используйте +, -, *, **, /, //, % или 'q' для выхода.")
+    if choice == '1': print(f"{num1} + {num2} = {add(num1, num2)}")
+    elif choice == '2': print(f"{num1} - {num2} = {subtract(num1, num2)}")
+    elif choice == '3': print(f"{num1} * {num2} = {multiply(num1, num2)}")
+    elif choice == '4': print(f"{num1} / {num2} = {divide(num1, num2)}")
+    else: print("Неверный ввод")
+
 
 calculator()
